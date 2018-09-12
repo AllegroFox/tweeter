@@ -18,7 +18,7 @@ function createTweetElement(data) {
   let $username = $("<h2>").addClass("username").append(username);
   let $handle = $("<span>").addClass("handle").append(handle);
 
-  let $content = $("<p>").append(content).addClass("tweet-content");
+  let $content = $("<p>").text(content).addClass("tweet-content");
 
   let $time = $("<span>").addClass("days-old").append(timeAgo + " minutes ago");
   let $flag = $(`<img src=./images/flag.png>`).addClass("icon");
@@ -39,7 +39,7 @@ function createTweetElement(data) {
 function renderTweets(tweets) {
   for (const i in tweets) {
     let $tweet = createTweetElement(tweets[i]);
-    $('#tweet-container').append($tweet); // to add it to the page
+    $('#tweet-container').prepend($tweet); // to add it to the page
 
   }
 }
@@ -53,7 +53,33 @@ function loadTweets() {
 };
 
 $(document).ready(function(){
+  $(function() {
+
+      $( "form" ).on( "submit", function( event ) {
+        event.preventDefault();
+        const text = $(this).serialize();
+        console.log(text.length);
+        if (text.length < 6){
+          alert("Tweet is empty!");
+        } else if (text.length > 146){
+          alert("Your tweet is too long!");
+        } else {
+          $.ajax({
+            url: '/tweets',
+            method: 'POST',
+            data: text
+          })
+          .then(function (tweet) {
+            $('#tweet-container').prepend(createTweetElement(tweet));
+            console.log('Success: ', text);
+          });
+        }
+      });
+    });
   loadTweets();
 });
+
+
+
 
 
