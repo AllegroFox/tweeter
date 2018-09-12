@@ -31,6 +31,7 @@
     <nav id="nav-bar">
       <img class="logo" src="/images/bird.png">
       <span class="header">Tweeter</span>
+      <button class="compose-button" type="button">Compose</button>
     </nav>
 
 
@@ -40,7 +41,7 @@
       <section class="new-tweet">
         <h2 id="new-tweet-header">Compose Tweet</h2>
         <form action="/tweets" method="POST">
-          <textarea class= "text-area" name="text" placeholder="What are you humming about?"></textarea>
+          <textarea id="compose-text-area" class= "text-area" name="text" placeholder="What are you humming about?"></textarea>
           <footer>
             <input id="new-post-button" type="submit" value="Tweet">
             <span class="counter">140</span>
@@ -53,6 +54,12 @@
       </section>
 
     </main>
+    <script>
+      $( ".compose-button" ).click(function() {
+        $( ".new-tweet" ).slideToggle( "slow" );
+        $( "#compose-text-area" ).focus();
+      });
+    </script>
 
   </body>
 

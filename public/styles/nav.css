@@ -28,3 +28,22 @@
   width: 80px;
   height: 80px;
 }
+
+.compose-button {
+    background-color: #eee;
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    float: right;
+    color: #00a087;
+}
+
+.compose-button:hover {
+  color: black;
+  border: 2px solid black;
+}
