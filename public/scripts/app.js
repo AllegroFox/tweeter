@@ -59,10 +59,11 @@ $(document).ready(function(){
         event.preventDefault();
         const text = $(this).serialize();
         console.log(text.length);
+        $( ".error-message" ).slideUp( 200 );
         if (text.length < 6){
-          alert("Tweet is empty!");
+          $( "#empty" ).slideDown( 400 );
         } else if (text.length > 146){
-          alert("Your tweet is too long!");
+          $( "#too-long" ).slideDown( 400 );
         } else {
           $.ajax({
             url: '/tweets',
