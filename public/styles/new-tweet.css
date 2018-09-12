@@ -1,0 +1,40 @@
+.new-tweet {
+  background-color: #eee;
+  margin-left: 2em;
+  margin-right: 2em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding: 1em;
+  border-radius: 5px;
+  border: 1px solid grey;
+
+}
+
+#new-tweet-header {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+
+.counter-over-max {
+
+  float: right;
+  color: red;
+
+}
+
+.counter {
+
+  float: right;
+
+}
+
+
+.text-area {
+
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+
+}
+
