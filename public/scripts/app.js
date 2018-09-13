@@ -59,7 +59,7 @@ $(document).ready(function(){
         event.preventDefault();
         const text = $(this).serialize();
         console.log(text.length);
-        $( ".error-message" ).slideUp( 200 );
+        $( ".error-message" ).slideUp( 400 );
         if (text.length < 6){
           $( "#empty" ).slideDown( 400 );
         } else if (text.length > 146){
