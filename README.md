@@ -4,7 +4,8 @@ Tweeter is a simple, single-page Twitter clone, built with HTML5, JQuery, and CS
 
 ## Screenshots
 
-
+![Screenshot of tweet composition form](https://raw.githubusercontent.com/AllegroFox/tweeter/master/Docs/Compose-box.png)
+![Screenshot of sample tweets](https://raw.githubusercontent.com/AllegroFox/tweeter/master/Docs/Sample-tweets.png)
 
 ## Getting Started
 
