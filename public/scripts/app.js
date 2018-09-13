@@ -71,6 +71,7 @@ $(document).ready(function(){
             data: text
           })
           .then(function (tweet) {
+            $("form")[0].reset();
             $('#tweet-container').prepend(createTweetElement(tweet));
             console.log('Success: ', text);
           });
