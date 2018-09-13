@@ -1,4 +1,5 @@
 
+//builds the HTML structure of a new tweet
 function createTweetElement(data) {
   const avatar = data.user.avatars["regular"];
   const username = data.user["name"];
@@ -35,15 +36,16 @@ function createTweetElement(data) {
   }
 
 
-
+//loops through the tweets in the database and renders them
 function renderTweets(tweets) {
   for (const i in tweets) {
     let $tweet = createTweetElement(tweets[i]);
-    $('#tweet-container').prepend($tweet); // to add it to the page
+    $('#tweet-container').prepend($tweet);
 
   }
 }
 
+//makes the GET request to the database of tweets
 function loadTweets() {
   $.ajax('/tweets', { method: 'GET' })
   .then(function (tweets) {
@@ -52,6 +54,8 @@ function loadTweets() {
   });
 };
 
+
+//handles form submission and errors for new tweets
 $(document).ready(function(){
   $(function() {
 

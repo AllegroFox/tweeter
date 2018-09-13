@@ -1,3 +1,5 @@
+
+//counts characters in the form input and diplays the counter.
 console.log("char counter loaded!");
 
 $(document).ready(function() {
